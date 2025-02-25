@@ -1,0 +1,88 @@
+Criando um arquivo requirements.txt e Transformando um Script Python em Executável
+
+
+Introdução
+Nesta apostila, você aprenderá a gerar um arquivo requirements.txt contendo todas as dependências do seu projeto Python e, em seguida, a transformar seu script em um executável .exe.
+
+1. Criando o Arquivo requirements.txt
+O arquivo requirements.txt é utilizado para listar todas as bibliotecas que seu projeto Python necessita. Ele facilita a instalação das dependências em outros computadores com o comando pip install -r requirements.txt.
+
+Passo 1: Criar um Ambiente Virtual (Opcional, mas Recomendado)
+Para evitar conflitos entre bibliotecas, é recomendável criar um ambiente virtual antes de instalar as dependências.
+
+Criar o ambiente virtual
+No terminal ou prompt de comando, digite:
+
+
+python -m venv venv
+
+
+Isso criará uma pasta chamada venv no diretório do seu projeto.
+
+Ativar o ambiente virtual
+
+No Windows:
+
+venv\Scripts\activate
+
+No Linux/macOS:
+
+source venv/bin/activate
+
+Passo 2: Instalar as Dependências
+
+Caso seu código dependa de bibliotecas externas, instale-as usando o comando:
+
+
+pip install nome-da-biblioteca
+
+Exemplo:
+
+pip install numpy pandas
+
+Passo 3: Gerar o Arquivo requirements.txt
+
+Após instalar as bibliotecas necessárias, gere o arquivo requirements.txt com o comando:
+
+
+pip freeze > requirements.txt
+
+Isso criará um arquivo listando todas as bibliotecas instaladas, incluindo suas versões.
+
+Passo 4: Instalar as Dependências em Outro Computador
+
+Para instalar todas as bibliotecas em outro ambiente, basta usar:
+
+
+pip install -r requirements.txt
+
+2. Transformando um Script Python em um Executável (.exe)
+
+Se você deseja distribuir seu script Python para usuários que não têm Python instalado, pode convertê-lo em um executável.
+
+Passo 1: Instalar o pyinstaller
+O pyinstaller é uma ferramenta que converte scripts Python em executáveis:
+
+
+pip install pyinstaller
+
+Passo 2: Gerar o Executável
+Para criar o .exe, execute o comando:
+
+
+pyinstaller --onefile nome_do_arquivo.py
+
+Explicação:
+
+--onefile: Gera um único arquivo executável.
+Isso criará uma pasta dist/ contendo o arquivo .exe.
+
+Passo 3: Adicionar um Ícone (Opcional)
+Se quiser adicionar um ícone ao executável, use:
+
+
+pyinstaller --onefile --icon=icone.ico nome_do_arquivo.py
+O ícone deve estar no formato .ico.
+
+Passo 4: Distribuição
+Após gerar o executável, você pode encontrá-lo na pasta dist/. Basta copiar o arquivo .exe e compartilhá-lo.
