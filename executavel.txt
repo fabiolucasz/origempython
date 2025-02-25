@@ -29,6 +29,12 @@ No Linux/macOS:
 
 source venv/bin/activate
 
+Obs: no windows a ativação do venv pode dar erro. Para corrigir, abra o powershell como administrador e digite o seguinte linha:
+
+Set-ExecutionPolicy RemoteSigned
+
+Após presseionar enter, selecione a opção "sim" ou "sim para todos" e execute o venv\Scripts\activate no terminal python novamente.
+
 Passo 2: Instalar as Dependências
 
 Caso seu código dependa de bibliotecas externas, instale-as usando o comando:
